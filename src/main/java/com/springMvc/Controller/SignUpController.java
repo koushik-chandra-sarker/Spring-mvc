@@ -1,6 +1,8 @@
 package com.springMvc.Controller;
 
 import com.springMvc.Model.User;
+import com.springMvc.Service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -12,6 +14,9 @@ import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class SignUpController {
+
+    @Autowired
+    private UserService userService;
 
     @RequestMapping("/signup")
     public String contact() {
@@ -60,9 +65,20 @@ public class SignUpController {
 
     //or
     //User's fields must be same as input's names
-    @RequestMapping(path = "/signupProcess", method = RequestMethod.POST)
+    /*@RequestMapping(path = "/signupProcess", method = RequestMethod.POST)
     public String formControl(@ModelAttribute User user, Model model) {
         return "success";
+    }*/
+
+
+    @RequestMapping(path = "/signupProcess", method = RequestMethod.POST)
+    public String formControl(@ModelAttribute User user, Model model) {
+        //save user to databases
+        int id = userService.CreateUser(user);
+        model.addAttribute("id",id);
+        return "success";
     }
+
+
 
 }

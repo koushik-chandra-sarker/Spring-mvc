@@ -16,8 +16,11 @@
     <h1>User Password: ${password}</h1>
     <h1>Username Email: ${email}</h1>--%>
 
-    <h1>Username: ${user.username}</h1>
+    <%--<h1>Username: ${user.username}</h1>
     <h1>User Password: ${user.password}</h1>
-    <h1>Username Email: ${user.email}</h1>
+    <h1>Username Email: ${user.email}</h1>--%>
+
+    <h1>User Created with id ${id}</h1>
+
 </body>
 </html>
