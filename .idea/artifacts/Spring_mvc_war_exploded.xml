@@ -1,6 +1,13 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="Spring-mvc:war exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/Spring_mvc_war_exploded</output-path>
+    <output-path>$PROJECT_DIR$/target/Spring-mvc</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <exploded>true</exploded>
+        <module>Spring-mvc</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
@@ -15,6 +22,7 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.2.5.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.2.5.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-web:5.2.5.RELEASE" />
+          <element id="library" level="project" name="Maven: javax.servlet:servlet-api:2.5" />
           <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
           <element id="library" level="project" name="Maven: org.springframework:spring-orm:5.2.5.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-jdbc:5.2.5.RELEASE" />
@@ -39,7 +47,12 @@
           <element id="library" level="project" name="Maven: com.sun.xml.fastinfoset:FastInfoset:1.2.15" />
           <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.20" />
           <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.6.1" />
+          <element id="library" level="project" name="Maven: commons-fileupload:commons-fileupload:1.4" />
+          <element id="library" level="project" name="Maven: commons-io:commons-io:2.7" />
         </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/Spring-mvc/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="Spring-mvc/web/Web" />
     </root>
